@@ -1,0 +1,85 @@
+1. 
+
+What is easing? 
+	- An animated motion that utilises a smooth transition from one keyframe to the next representing a closer to 'real life' movement of a digital ui object.
+Write a few types of easing. 
+	- easeInSine
+	- easeOutSine
+	- easeInOutCubic
+Where would you apply these functions?
+	- Towards a ui element that either needs to be initially animated upon a page load before settling down in a cohesive page composition 
+	- Upon user interaction with ui element such as a button, to indicate that the pressing of a key has some form of visual feedback acknowledging interaction from user
+
+2.
+
+What are some of the pros and cons of using Promises in Javascript? 
+	- Con: they would run in parallel initially, asynchronosouly, if there was a dependency on the first promise after a request to the server for data, the resolve would need to complete within the callback of the request to the server, making the handling of sequential promises to contain a bit more extra boiler plate but also produce inaccurate results if constructed utilising Promise.all[]
+	- Con: syntactic sugar - every Promise needs to be wrapped in a new Promise to be recognised as a chain of Promises, and needs to return a resolve or reject, if one rejects during a promise, a promise catch clause is triggered, instead of going to the next Promise, i think the semiotics here on a macro scale need to be better worded
+	- Pros: If the server-client relationship is constructed in a manner that does not require interdependent values for each REST API request, the use of Promises become elegant
+	- Note: Of late promises have been enhanced and can now be called in sequence, my experience of them in 2017 was interesting, based on the project and scenarios I was tackling for logistics and batch for web/nodejs
+
+What is the super-set of promises?
+	- AJAX, XMLHTTPRequest was the precursor to Promises, it would contain a callback function after data has been fetched from the server
+
+3. 
+
+Which non-progammable parts of a graphics pipeline can be used to speed up rendering and performance?
+
+	- batching of textures, using a spritesheet, using position cordinates to extract elements from a spritesheet to display on screen
+	- reducing resolution and size of textures, for easier load times
+	- using less geometric points and curves in a 3d model, to lower the amount of processing required to display object on screen
+	- ensuring assets for various ui and media elements are reduced to smaller file sizes
+	- using one texture to represent multiple objects, and changing the alpha programatically, reducing amount of textures loaded into memory
+
+4. Pick three design patterns that are in your opinion most useful to game development, describe them and write a short example how one would them in the development process?
+
+	- Abstract factory: Re-usability through a common shared parent class, that can also allow one to do polymorphism in the old oops(object orientated days), but for web, I adore the re-usability principle of importing a function instead of having to retype it locally, or having a global DOM object that has this function attached to it, similar to the window.onload, but in this case since every function in Javascript is a 'first class citizen object' of the sorts, there is a cross-polination of types, although syntactically there is a typeof to identify types and while experimenting the restriction of object vs json vs function, allows for more flexibility with a function as json does not store functions, and an object can but will do so in a sibling tree of functional related logic, prefixed by a dot syntax of representing that field, also parsing and copying between the two requires a lot of traversal. Abstract factory in principle of reusability is the overlapping theme I would associate.
+	- Builder pattern: assembling an algorithim or 'composing' in segments of separated functionality, increasing the maintainability of a project, and categorising functions in a top-down nested heirarchy of associated logic
+	- Adapter pattern: a form of transformation and massaging of data associated to 'types' to be allowed to be processed in a separate function. I would use this more in a sense of deciding which function to use based on a parameter passed that locates the correct function to be used, instead of the developer having to recode the function, it is compartmentalised and provided globally to be accessed, one can isolate all server calls to one file, and then attache a function that allows for a parameter and object to be passed associated to that unique server call for e.g login, this would reduce the boilerplate for ajax, xmlhttprequest, to be re-written
+
+5. Explain Redux design pattern?
+
+	- contains a single state across the application, which is similar to a global object, this mutates/changes based on what is passed to the reducers and new state is returned on initial incomming parameters. redux then notifies all ui elements that the state has been updated, in a form similar to the observer pattern
+
+6. 
+
+what is a game loop? 
+	- represents core logic ran in a game that is dependent on a ticker/time loop of how the processor runs in milliseconds, it will run the logic wrapped in this loop, checking for conditions and updating the display of these elements
+
+what is fps?
+	- frames per seconds, how many visual frames can be displayed per second on a monitor, if one can draw a parallel to an artist flipping a cartoon sketchbook, each frame would be a visual frame on screen, and the fluidity at which this would be flipped would seem lifelike, based on the pace of how fast each frame is displayed
+
+7. write code to convert an array of strings to an array of the length of those strings - use JS ES6 or TS?
+	function convertArrayOfStrings(initialArray) {
+		let stringLengthArr = [];
+
+		initialArray.forEach((value)=>{
+			stringLengthArr.push(value.length)
+		})
+
+		return stringLengthArr;
+	}
+
+	let result = convertArrayOfStrings(['string1', 'string2']);
+	console.log(result);
+
+	
+
+8. write code to sum an array of numbers - use JS ES6 or TS
+	var sum = 0;
+	
+	[1,2,3,4,5].map((value)=>{
+		sum = sum + value;
+	})
+
+	console.log(sum);
+
+
+
+
+
+
+
+
+
+
