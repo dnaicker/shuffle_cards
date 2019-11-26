@@ -1,26 +1,21 @@
-# -----------
 # local setup/run:
 - https://nodejs.org/en/download/
 - `npm install http-server -g`
 - `http-server --cors -o`
 
-# -----------
 # overview:
 - a memory game
 
-# -----------
 # description
 - random 4 cards will be displayed
 - they will subsequently be shuffled
 - the user will try and guess the placement of the new order of the cards
 
-# -----------
 # how to play
 - select starting betting amount
 - let the intial cards be shown, and shuffled by the computer
 - place the cards in the assumed guessed new position
 
-# -----------
 # how to win
 - if 3 out of 4 cards guessed correctly no loss is made
 - if 4 out of 4 cards guessed correctly the inital betting amount is doubled and added to your winnings
