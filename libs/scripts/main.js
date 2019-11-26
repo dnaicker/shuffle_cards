@@ -32,5 +32,3 @@ pcCard8.y = renderer.screen.height / 4 - 70;
 //reverse textures 
 //display text results if cards aligned 3 out 5
 //display button to restart: refresh window
-//host on github 
-//send link to Danielle
