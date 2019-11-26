@@ -1,11 +1,8 @@
 # -----------
 # local setup/run:
-# 1. install: 
-#	- https://nodejs.org/en/download/
-# 2. from terminal/cmd, install: 
-#	- `npm install http-server -g`
-# 3. from project root folder, run in terminal/cmd: 
-# 	- `http-server --cors -o`
+- https://nodejs.org/en/download/
+- `npm install http-server -g`
+- `http-server --cors -o`
 
 # -----------
 # overview:
